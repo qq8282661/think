@@ -1,3 +1,6 @@
 {
-  "extends": "think"
+  "extends": "think",
+  "globals": {
+    "think": "writable"
+  }
 }
