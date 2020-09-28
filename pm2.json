@@ -3,7 +3,7 @@
     {
       "name": "think",
       "script": "production.js",
-      "cwd": "D:workspace\think",
+      "cwd": "/d/workspace/think",
       "exec_mode": "fork",
       "max_memory_restart": "1G",
       "autorestart": true,
