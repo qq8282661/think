@@ -1,5 +1,5 @@
 {
-  "extends": "think",
+  "extends": ["think", "prettier"],
   "globals": {
     "think": "writable"
   }

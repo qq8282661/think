@@ -3,7 +3,6 @@
   "description": "application created by thinkjs",
   "version": "1.0.0",
   "author": "huazai5m <644827059@qq.com>",
-
   "scripts": {
     "start": "node development.js",
     "test": "THINK_UNIT_TEST=1 nyc ava test/ && nyc report --reporter=html",
@@ -24,16 +23,18 @@
     "thinkjs": "^3.0.0"
   },
   "devDependencies": {
+    "ava": "^0.18.0",
     "babel-cli": "^6.24.1",
     "babel-preset-think-node": "^1.0.0",
-    "node-notifier": "^5.0.2",
-    "think-inspect": "0.0.2",
-    "think-babel": "^1.0.3",
-    "think-watcher": "^3.0.0",
     "eslint": "^4.2.0",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-config-think": "^1.0.0",
-    "ava": "^0.18.0",
-    "nyc": "^7.0.0"
+    "husky": "^4.3.0",
+    "node-notifier": "^5.0.2",
+    "nyc": "^7.0.0",
+    "think-babel": "^1.0.3",
+    "think-inspect": "0.0.2",
+    "think-watcher": "^3.0.0"
   },
   "repository": "",
   "license": "MIT",
@@ -52,5 +53,11 @@
     "template": "C:\\Users\\54\\AppData\\Local\\nvs\\node\\12.18.4\\x64\\node_modules\\think-cli\\default_template",
     "clone": false,
     "isMultiModule": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   }
 }
