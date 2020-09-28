@@ -7,8 +7,13 @@
     "start": "node development.js",
     "test": "THINK_UNIT_TEST=1 nyc ava test/ && nyc report --reporter=html",
     "compile": "babel --no-babelrc src/ --presets think-node --out-dir app/",
-    "lint": "eslint src/",
-    "lint-fix": "eslint --fix src/"
+    "lint": "npm run lint:js && npm run lint:prettier",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src ",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:prettier": "check-prettier lint",
+    "prettier": "prettier -c --write \"**/*\""
   },
   "dependencies": {
     "think-cache": "^1.0.0",
@@ -33,6 +38,7 @@
     "lint-staged": "^10.4.0",
     "node-notifier": "^5.0.2",
     "nyc": "^7.0.0",
+    "prettier": "^2.1.2",
     "think-babel": "^1.0.3",
     "think-inspect": "0.0.2",
     "think-watcher": "^3.0.0"
