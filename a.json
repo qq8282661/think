@@ -1,0 +1,116 @@
+{
+  "info": {
+    "title": "车老板微信小程序接口",
+    "version": "1.0.0",
+    "description": "<table>\n          <thead>\n            <tr>\n              <th>序号</th>\n              <th>版本号</th>\n              <th>更新内容</th>\n              <th>更新日期</th>\n              <th>更新人</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>1</td>\n              <td>1.0.0</td>\n              <td>文档发布</td>\n              <td>2020-9-4</td>\n              <td>季彬</td>\n            </tr>\n          </tbody>\n          </table>"
+  },
+  "host": "localhost:17102",
+  "basePath": "/",
+  "produces": ["application/json"],
+  "schemes": ["http", "https"],
+  "securityDefinitions": {
+    "JWT": { "type": "apiKey", "in": "header", "name": "Authorization", "description": "" }
+  },
+  "swagger": "2.0",
+  "paths": {
+    "/api/v1/user/register": {
+      "post": {
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "请输入用户名\n{\"color\":\"颜色\",\"liter\":{\"value\":\"排量\",\"unit\":\"\"},\"model_emission_standard\":{\"value\":\"排放标准\",\"unit\":\"\"},\"mile\":{\"value\":\"里程\",\"unit\":\"万公里\"},\"add_time\":{\"value\":\"发布日期\",\"unit\":\"\"}}",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "请输入密码",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "age",
+            "in": "query",
+            "description": "请输入年龄",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "请输入合法邮箱",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "\n 用户信息注册\nconsts.CAR_ORDER_SORT",
+        "tags": ["user"],
+        "responses": {
+          "200": { "description": "{a: 234}" },
+          "201": { "description": "An array of user info" },
+          "default": { "description": "Unexpected error" }
+        }
+      }
+    },
+    "/api/v1/user/login": {
+      "post": {
+        "parameters": [
+          {
+            "name": "username",
+            "in": "body",
+            "description": "请输入用户名",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "age",
+            "in": "query",
+            "description": "请输入年龄",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "emlail",
+            "in": "query",
+            "description": "请输入合法邮箱",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "\n 用户登录",
+        "tags": ["user"],
+        "responses": {
+          "200": { "description": "SUCCESS:consts.CAR_SELE_SHOW" },
+          "201": { "description": "FIAL:An array of user info" },
+          "default": { "description": "Unexpected error" }
+        }
+      }
+    },
+    "/api/v1/user/password": {
+      "put": {
+        "parameters": [
+          {
+            "name": "age",
+            "in": "query",
+            "description": "请输入年龄",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "description": "\n 用户改密",
+        "tags": ["user"],
+        "responses": {
+          "200": { "description": "{a: 234}" },
+          "201": { "description": "An array of user info" },
+          "default": { "description": "Unexpected error" }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "tags": [{ "name": "user", "description": "用户模块" }]
+}

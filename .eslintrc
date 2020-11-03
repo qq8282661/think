@@ -2,5 +2,9 @@
   "extends": ["think", "prettier"],
   "globals": {
     "think": "writable"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn"
   }
 }
