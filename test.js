@@ -1,3 +1,3 @@
-const arr = {};
+const arr = [];
 
-console.log(Object.keys(arr));
+console.log(Object.getOwnPropertySymbols(arr), Object.getOwnPropertyNames(arr));

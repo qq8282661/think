@@ -1,8 +1,8 @@
 const Base = require('./base.js');
 
 module.exports = class extends Base {
-  indexAction() {
+  async indexAction() {
     // const a = 666;
-    return this.display();
+    return this.success(await this.model('user').select());
   }
 };
